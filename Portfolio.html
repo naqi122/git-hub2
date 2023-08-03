@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Web</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-image: linear-gradient(to top,#333 0%,#9b239b);
+    }
+    nav{
+        display: flex;
+        background-color: #200e3d;
+        justify-content: center;
+        position:fixed;
+        width: 99%;
+        z-index: 1;
+        margin-top: -5px;
+    }
+    h1,h2,h3{
+        font-family: "Days One",sans-serif;
+    }
+    nav ul{
+        display: flex;
+        align-items: center;
+        padding: 0 10%;
+        list-style: none;
+    }
+    nav ul li a{
+        font-size: 1.6rem;
+        padding: 0 15px;
+        color: white;
+        transition: 0.2s;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    nav ul li a:hover{
+        transition: 0.2s;
+        color: aqua;
+
+    }
+    .container{
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 15px;
+
+    }
+    .hero{
+      padding-top: 130px;
+    }
+    .hero img{
+        border-style: none;
+        border-radius: 50%;
+        margin: 0 auto;
+        
+        max-width: 440px;
+        display: block; 
+    }
+    h1{
+        color: black;
+        text-align: center;
+        font-size: 2.4rem;
+        margin: 30px 0px 100px 35px;
+    }
+    .aboutme{
+        width: 90%;
+        max-width: 1100px;
+        height: auto;
+        background-color: white;
+        text-align: center;
+        padding: 40px 50px 70px;
+        margin: 0 auto;
+        box-shadow: 10px 10px 0px rgb(0 0 0 / 40%), -10px -10px 0px rgb( 255 114 114 / 80%); 
+
+    }
+    .aboutme-section{
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: wrap;
+}
+    .aboutme-img{
+         height: 450px;
+         width: 400px;
+         padding-right: 20px;
+         background-image: url("imgs1/web.png");
+         background-size: cover;
+         background-position: center;
+}
+.aboutme-text{
+    height: auto;
+    width: 40%;
+    margin-left: 40px;
+    text-align: left;
+}
+#projects{
+    padding: 5px;
+    margin: 5%;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+#projects h2 {
+    color: white;
+}
+.projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+.earth-projects{
+    width: 440px;
+    height: 400px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    background-image: url("imgs1/earth.jpg");
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+
+}
+.bbc-projects{
+    width: 440px;
+    height: 400px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    background-image: url("imgs1/BBC_News_2019.svg.png");
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+
+}
+.text{
+    position: absolute;
+    height: 25px;
+    width: 91%;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    overflow: hidden;
+    transition: 0.2s;
+    padding: 20px;
+}
+.text:hover{
+    height: 175px;
+    transition: 0.3s;
+}
+.text h3{
+    margin-top: 3px;
+}
+.content{
+    color: black;
+}
+.button{
+    border: 5px solid lightblue;
+    border-radius: 10px;
+    width: 160px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+}
+.contact{
+    width: 100%;
+    height: auto;
+    padding: 75px 0 50px 0;
+    text-align: center;
+    background-color: rgba(3, 3, 3,45%);
+}
+.contact p{
+    margin-bottom: 50px;
+}
+.contact h2,.contact p{
+    color: white;
+}
+.contact-form{
+    max-width: 800px;
+    display: flex;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: white;
+}
+.contact-form label{
+    display: block;
+    margin-bottom: 9px;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.message textarea{
+    border-radius: 5px;
+    border: 0px;
+    flex-wrap: wrap;
+}
+.contact-details{
+    flex: 1;
+    margin-right: 50px;
+}
+.contact-details input{
+    width: 100px;
+    border-radius: 5px;
+    border: 0px;
+    padding: 15px 100px;
+    margin-bottom: 20px;
+}
+.message button{
+    color: #1d3d5f;
+    border: 0;
+    border-radius: 5px;
+    background: lightblue;
+    width: 140px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.message button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+    
+}
+footer{
+    height: 90px;
+    background-color: #1f2027;
+}
+footer .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.social-media{
+    font-size: 200%;
+    width: auto;
+    margin-left: auto;
+}
+.social-media a i{
+    color: white;
+    transition: 0.3s;
+}
+.social-media a i:hover{
+    color: lightblue;
+    transition: 0.2s;
+}
+.copyright{
+    color: white;
+}
+</style>
+<body>
+    <nav>
+            <ul>
+                <li><a href="#aboutme">About Me </a></li>
+                <li><a href="#projects">Projects </a></li>
+                <li><a href="#contactme">Contact Me </a></li>
+            </ul>
+    </nav>
+    <section class="hero">
+        <div class="container">
+           <img src="imgs1/web_design_services_flat_web_design_icon_png_web_design_png_web_design_icon.png" alt="">
+           <h1>Hi!I'm M.naqi! I teach how to create websites and basic designing for beginners.</h1>
+        </div>
+    </section>
+    <section id="aboutme" class="aboutme">
+         <h2>About Me</h2>
+         <div class="aboutme-section">
+         <div class="img">
+             <div class="aboutme-img"></div>
+         </div>
+         <div class="aboutme-text">
+             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                 Voluptatum sint, ipsa dolor perferendis quia temporibus ratione, 
+                <p>doloremque facere eum vel quam eos animi quo ipsum impedit</p> 
+                <p>aspernatur? Nihil, natus mollitia!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                     Soluta odit ipsa tenetur, corporis dignissim
+                    os impedit molestiae nobis nemo dolorem veritatis facilis id esse possimus.
+                     obcaecati vitae omnis inventore ea eos.</p>
+                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                         Nostrum, atque unde voluptatem aut praesentium modi,
+                          quisquam dolorem explicabo possimus obcaecati ex iste expedita at a, 
+                        nobis eligendi neque facere? Eveniet.</p>            
+         </div>
+        </div>
+    </section>
+      <section id="projects">
+            <div class="project">
+              <h2>Projects</h2>
+              <div class="projects">
+
+                <div class="earth-projects">
+                   <div class="text">
+                     <h3 class="project-name">Earth Facts</h3>
+                       <div class="content">
+                          <p>A HTML projects about some facts about the earth.</p>
+                       </div>
+                       <a href="../first html webpage/first.html" class="button" target="_blank">View Projects</a>
+                   </div>
+                </div>
+ 
+                <div class="bbc-projects">
+                    <div class="text">
+                      <h3 class="project-name">BBC News CLone</h3>
+                        <div class="content">
+                           <p>This is a Projects of clone of bbc news websites from the Web Dev 2.0 Course.</p>
+                        </div>
+                        <a href="https://www.bbc.com/news" class="button" target="_blank">View Projects</a>
+                    </div>
+
+                 </div>
+
+              </div>
+            </div>
+      </section>
+
+      <section id="contactme" class="contact">
+           <h2>Contact</h2>
+           <p>Use this form to get in touch. I would love to hear from you! </p>
+
+           <form class="contact-form">
+               <div class="contact-details">
+                   <label for="name" >Name</label>
+                   <input type="text" id="yourname" placeholder="Enter Your Name">
+                   <label for="subject" >Subject</label>
+                   <input type="text" id="subject" placeholder="Reason For Your Message">
+                   <label for="email" >Email</label>
+                   <input type="email" id="email" placeholder="Enter Your Email">
+               </div>
+               <div class="message">
+                <label for="msg">Message</label>
+                <textarea  id="msg"  rows="15"></textarea>
+                <button type="submit">Submit</button>
+               </div>
+           </form>
+
+      </section>
+      <footer>
+        <div class="container">
+            <div class="copyright">
+                  This site &copy; 2022 M.Naqi
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>
